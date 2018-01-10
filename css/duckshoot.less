@@ -1,0 +1,209 @@
+@-webkit-keyframes water {
+	0% {
+		left: -10%;
+	}
+	25% {
+		bottom: -35px
+	}
+	50% {
+		bottom: -30px
+	}
+	75% {
+		bottom: -35px
+	}
+	100% {
+		left: 0;
+	}
+}
+
+@keyframes water {
+	0% {
+		left: -30px;
+	}
+	25% {
+		bottom: -40px
+	}
+	50% {
+		bottom: -30px
+	}
+	75% {
+		bottom: -40px
+	}
+	100% {
+		left: 0;
+	}
+}
+
+@-webkit-keyframes duck {
+	0% {
+		left: 100%
+	}
+	100% {
+		left: 0
+	}
+}
+
+@keyframes duck {
+	0% {
+		left: 100%
+	}
+	100% {
+		left: 0
+	}
+}
+
+.container {
+	width: 800px;
+	margin: 50px auto;
+}
+.headboard img {
+	float: left;
+}
+#gallery {
+	width: 800px;
+	height: 200px;
+	background: skyblue;
+	position: relative;
+	margin: 0;
+	overflow: hidden;
+	z-index: 1;
+	cursor: url(../img/crosshairs.png) 25 25, crosshair;
+	-webkit-box-shadow: 5px 5px 25px #444 inset;
+	-moz-box-shadow: 5px 5px 25px #444 inset;
+	box-shadow: 5px 5px 25px #444 inset;
+	border-radius: 0 0 4px 4px;
+	.duckwrap {
+		width: 900px;
+		height: 80px;
+		position: absolute;
+		bottom: 0;
+		left: -50px;
+		z-index: 2;
+	}
+	.duck {
+		width: 63px;
+		height: 54px;
+		background: url(../img/duck_sm_s.png) no-repeat;
+		background-size: cover;
+		position: absolute;
+		float: left;
+		bottom: 24px;
+		left: 100%;
+		-webkit-animation: duck 3s linear infinite;
+		animation: duck 5s linear infinite;
+	}
+	.water {
+		pointer-events: none;
+		width: 110%;
+		background: url(../img/water.png) repeat-x;
+		height: 100px;
+		position: absolute;
+		bottom: -35px;
+		-webkit-animation: water 2s linear infinite alternate;
+		animation: water 2s linear infinite alternate;
+		z-index: 3;
+	}
+	#counter {
+		font-size: 1.6em;
+		font-weight: bold;
+		color: #0035A2;
+		position: absolute;
+		top: 0;
+		right: 16px;
+		text-shadow: 1px 1px 2px #444;
+		.ducks {
+			font-size: 2.2em;
+			vertical-align: -10px;
+		}
+	}
+	#tries {
+		font-size: 1.6em;
+		font-weight: bold;
+		color: #f00;
+		position: absolute;
+		top: 0;
+		left: 16px;
+		text-shadow: 1px 1px 2px #444;
+		.shots {
+			font-size: 2.2em;
+			vertical-align: -10px;
+		}
+	}
+
+	.hole {
+		background: #000;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		border-radius: 50%;
+		width: 8px;
+		height: 7px;
+		-webkit-box-shadow: -1px -1px 3px #fff inset;
+		-moz-box-shadow: -1px -1px 3px #fff inset;
+		box-shadow: -1px -1px 3px #fff inset;
+		position: absolute;
+		opacity: 0.6;
+	}
+}
+#card {
+	width: 50%;
+	height: 60%;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 0 10px #222;
+	-moz-box-shadow: 0 0 10px #222;
+	box-shadow: 0 0 10px #222;
+	color: #fff;
+	text-align: center;
+	z-index: 4;
+	position: relative;
+	margin: 20px auto;
+	padding: 20px;
+	display: none;
+	h2 {
+		font-size: 2em;
+		margin: 0 0 0.75em;
+	}
+	a {
+		color: #fff;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&.alas {
+		background: red;
+	}
+	&.hooray {
+		background: green;
+	}
+}
+
+#teddy {
+	position: absolute;
+	left: 50%;
+	top: 1%;
+	z-index: 9999;
+	width: 445px;
+	height: 453px;
+	background: url(../img/teddy.png) 0 0 no-repeat;
+	display: none;
+	.closeTeddy {
+		color: #000;
+		text-decoration: none;
+		position: absolute;
+		left: 95px;
+		top: 400px;
+		font-size: 24px;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.again {
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
